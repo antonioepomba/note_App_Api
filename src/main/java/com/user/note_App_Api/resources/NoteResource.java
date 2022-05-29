@@ -47,9 +47,9 @@ public class NoteResource {
 		 return noteRepository.findById(id);
 	 }
 	 @CrossOrigin(origins = "http://localhost:8080")
-	 @DeleteMapping("/note/{id}")
-	public void deleteUser(@PathVariable("id") Long id) {
-		noteRepository.deleteById(id);
+	 @DeleteMapping("/note")
+	public void deleteNotes(@RequestBody Note notes) {
+		noteRepository.delete(notes);
 	 }
 	 @CrossOrigin(origins = "http://localhost:8080")
 	 @PutMapping("/note")

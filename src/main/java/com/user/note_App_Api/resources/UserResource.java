@@ -45,9 +45,9 @@ public class UserResource {
 		 return userRepository.findById(id);
 	 }
 	 
-	 @DeleteMapping("/user/{id}")
-	public void deleteUser(@PathVariable("id") Long id) {
-		 userRepository.deleteById(id);
+	 @DeleteMapping("/user")
+	public void deleteUser(@RequestBody Users users) {
+		 userRepository.delete(users);
 	 }
 	 
 	 @PutMapping("/user")
